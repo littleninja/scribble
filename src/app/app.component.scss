@@ -1,8 +1,16 @@
-.fab-add-button {
-  margin-top: 60px;
-  margin-right: 16px;
-}
+@import '../theme';
+
+$breakpoint-tablet: 800px;
 
 .spacer {
   flex: 1 1 auto;
+}
+
+.lane {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.tile {
+  background-color: mat-color($scribbles-app-primary, 100);
 }

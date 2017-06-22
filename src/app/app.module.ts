@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import {
   MdButtonModule,
+  MdGridListModule,
   MdIconModule,
   MdToolbarModule
 } from '@angular/material';
@@ -16,6 +17,7 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     MdButtonModule,
+    MdGridListModule,
     MdIconModule,
     MdToolbarModule
   ],

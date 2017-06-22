@@ -1,11 +1,20 @@
-<!--The whole content below can be removed with the new code.-->
-<md-toolbar color="primary">
+<md-toolbar color="primary" class="toolbar">
 
-    <span>Scribbles</span>
-    <span>Doodle daily.</span>
-    <span class="spacer"></span>
-    <button md-mini-fab class="fab-add-button">
-      <md-icon>add</md-icon>
-    </button>
+  <h1>Scribbles</h1>
+  <span class="spacer"></span>
+  <button md-mini-fab class="fab-add-button">
+    <md-icon>add</md-icon>
+  </button>
 
 </md-toolbar>
+<section class="lane">
+  <md-grid-list cols="4" rowHeight="100px">
+    <md-grid-tile
+        *ngFor="let tile of tiles"
+        colspan="2"
+        rowspan="2"
+        class="tile">
+      {{tile.text}}
+    </md-grid-tile>
+  </md-grid-list>
+</section>
