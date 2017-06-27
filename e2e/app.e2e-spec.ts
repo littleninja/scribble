@@ -1,10 +1,10 @@
-import { ScribblesPage } from './app.po';
+import { ScribblePage } from './app.po';
 
-describe('scribbles App', () => {
-  let page: ScribblesPage;
+describe('scribble App', () => {
+  let page: ScribblePage;
 
   beforeEach(() => {
-    page = new ScribblesPage();
+    page = new ScribblePage();
   });
 
   it('should display welcome message', () => {
