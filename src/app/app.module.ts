@@ -1,37 +1,24 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {
-  MdButtonModule,
-  MdGridListModule,
-  MdIconModule,
-  MdToolbarModule
-} from '@angular/material';
-import { AngularFireModule } from 'angularfire2';
-import { AngularFireDatabaseModule } from 'angularfire2/database';
-import { AngularFireAuthModule } from 'angularfire2/auth';
+import { CommonModule } from '@angular/common';
+import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule, Routes } from '@angular/router';
 
-import { environment } from '../environments/environment';
+import { ScribbleModule } from './scribble/scribble.module';
+
 import { AppComponent } from './app.component';
-import { ArtGridComponent } from './art-grid/art-grid.component';
-import { ArtNavComponent } from './art-nav/art-nav.component';
+
+const appRoutes: Routes = [
+  { path: '', component: AppComponent }
+];
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ArtGridComponent,
-    ArtNavComponent
-  ],
   imports: [
-    AngularFireModule.initializeApp(environment.firebase),
-    AngularFireDatabaseModule,
-    AngularFireAuthModule,
+    CommonModule,
     BrowserModule,
-    MdButtonModule,
-    MdGridListModule,
-    MdIconModule,
-    MdToolbarModule
+    ScribbleModule,
+    RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  declarations: [AppComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
