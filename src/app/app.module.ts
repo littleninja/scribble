@@ -8,7 +8,14 @@ import { ScribbleModule } from './scribble/scribble.module';
 import { AppComponent } from './app.component';
 
 const appRoutes: Routes = [
-  { path: '', component: AppComponent }
+  {
+    path: 'app',
+    component: AppComponent
+  },
+  {
+    path: 'scribble',
+    loadChildren: 'app/scribble/scribble.module#ScribbleModule'
+  }
 ];
 
 @NgModule({

@@ -17,7 +17,6 @@ export class ArtGridComponent implements OnInit {
     const subscription = this._db.list('/tiles');
     subscription.subscribe((t) => {
       this.tiles = t.map(v => v.$key);
-      console.log(this.tiles);
     });
   }
 
