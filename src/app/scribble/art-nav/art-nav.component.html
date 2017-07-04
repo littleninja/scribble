@@ -1,10 +1,17 @@
 <md-toolbar color="primary" class="toolbar">
 
   <h1>Scribble</h1>
-  <span class="spacer"></span>
-  <button md-mini-fab class="fab-add-button">
-    <md-icon>add</md-icon>
-  </button>
+  <div class="spacer"></div>
+  <a md-icon-button [mdMenuTriggerFor]="userMenu" class="menu-button">
+    <img *ngIf="user.photoURL; else anonIcon" class="user-icon" [src]="user.photoURL">
+    <ng-template #anonIcon>
+      <md-icon>account_circle</md-icon>
+    </ng-template>
+  </a>
+  <md-menu #userMenu="mdMenu" [overlapTrigger]="false">
+    <button md-menu-item *ngIf="!user.isAuthenticated" (click)="user.login()">Sign in</button>
+    <button md-menu-item *ngIf="user.isAuthenticated" (click)="user.logout()">Sign out</button>
+  </md-menu>
 
 </md-toolbar>
 

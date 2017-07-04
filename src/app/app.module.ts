@@ -9,12 +9,15 @@ import { AppComponent } from './app.component';
 
 const appRoutes: Routes = [
   {
-    path: 'app',
-    component: AppComponent
-  },
-  {
-    path: 'scribble',
-    loadChildren: 'app/scribble/scribble.module#ScribbleModule'
+    path: '',
+    component: AppComponent,
+    children: [
+      {
+        path: 'scribble',
+        loadChildren: 'app/scribble/scribble.module#ScribbleModule'
+      }
+      // todo: family module
+    ]
   }
 ];
 

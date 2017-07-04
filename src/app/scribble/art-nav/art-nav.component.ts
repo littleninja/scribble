@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-art-nav',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ArtNavComponent implements OnInit {
 
-  constructor() { }
+  authLabel = 'Sign in';
 
-  ngOnInit() {
-  }
+  constructor(public user: UserService) { }
+
+  ngOnInit() { }
 
 }
