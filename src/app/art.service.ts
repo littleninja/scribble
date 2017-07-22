@@ -19,7 +19,7 @@ export class ArtService {
   getArt(): Observable<any> {
     return this._db.list('/art').map((art) => {
       return art.map(a => {
-        a.storagePromise = this._storageRef.child(`${a.fileName}`).getDownloadURL();
+        a.storagePromise = this._storageRef.child(a.fileName).getDownloadURL();
         return a;
       })
     });
