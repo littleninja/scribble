@@ -1,10 +1,14 @@
 @import '../../theme';
 
+.lane {
+  max-width: 760px;
+  margin: 24px auto 0 auto;
+}
+
 .tile {
   background-color: mat-color($scribble-app-primary, 100);
 }
 
-.lane {
-  max-width: 760px;
-  margin: 24px auto 0 auto;
+.tile .image {
+  height: 100%;
 }
